@@ -142,9 +142,6 @@ logs
 results
 build
 
-node_modules
-
-
 
 ### Objective-C.gitignore
 
@@ -200,3 +197,4 @@ proguard/
 
 ### xface
 .fetch.json
+temp-project
