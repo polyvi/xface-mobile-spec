@@ -46,6 +46,9 @@
   <dependency id="org.apache.cordova.test.whitelist" url="../cordova-plugin-whitelist" />
   <dependency id="org.apache.cordova.test.echo" url="../cordova-plugin-echo" />
 
+  <dependency id="org.apache.cordova.statusbar" url="../cordova-plugin-statusbar" />
+  <dependency id="org.apache.cordova.keyboard" url="../cordova-plugin-keyboard" />
+
   <dependency id="com.polyvi.xface.extension.advancedfiletransfer" name="xface-extension-advanced-file-transfer" />
   <dependency id="com.polyvi.xface.extension.ams" name="xface-extension-ams" />
   <dependency id="com.polyvi.xface.extension.bluetooth" name="xface-extension-bluetooth" />
