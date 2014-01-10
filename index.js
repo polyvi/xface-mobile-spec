@@ -1,6 +1,7 @@
 var fs = require('fs'),
     path = require('path'),
     child_process = require('child_process'),
+    os = require('os'),
     shell = require('shelljs');
 
 function cleanProject(projPath) {
@@ -16,10 +17,15 @@ function cleanProject(projPath) {
  */
 function spawn(cmd, callback) {
     var output = '', error = '',
+        command = cmd[0],
         opt = [];
     (cmd.length > 1) && (opt = cmd[1]);
+    if (os.platform() === 'win32') {
+        opt = ['/c', command].concat(opt);
+        command = 'cmd';
+    }
     console.log('Executing command "' + [cmd[0]].concat(opt).join(' ') + '"...');
-    var child = child_process.spawn(cmd[0], opt);
+    var child = child_process.spawn(command, opt);
     child.stdout.setEncoding('utf8');
     child.stdout.on('data', function(data) {
         output += data;
@@ -95,7 +101,7 @@ function exportSpecTest(projPath, dependenciesPluginPath) {
  */
 function generateSpecInstaller(projPath, dependenciesPluginPath, platforms, built) {
     var cmds = [
-        ['xmen', ['create', '.', 'com.polyvi.test HelloTest']],
+        ['xmen', ['create', '.', 'com.polyvi.test', 'HelloTest']],
         ['xmen', ['platform', 'add'].concat(platforms)],
         ['xmen', ['plugin', 'add', dependenciesPluginPath]],
         ['xmen', ['app', 'add', 'test']]
