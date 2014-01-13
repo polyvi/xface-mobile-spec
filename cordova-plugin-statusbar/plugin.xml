@@ -10,10 +10,6 @@
     <license>Apache 2.0</license>
     <keywords>cordova,statusbar</keywords>
 
-	<engines>
-		<engine name="cordova" version=">=3.0.0" />
-	</engines>
-
     <js-module src="www/statusbar.js" name="statusbar">
     	<clobbers target="window.StatusBar" />
     </js-module>
