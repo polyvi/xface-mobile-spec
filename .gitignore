@@ -198,3 +198,6 @@ proguard/
 ### xface
 .fetch.json
 temp-project
+
+cordova-mobile-spec
+package.json
