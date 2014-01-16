@@ -16,19 +16,31 @@ var AUTO_TEST_FRAMEWORK_FILES = [
  * 获取repo set
  */
 function getRepos(dependenciesPluginPath) {
-    var repos = [];
-
-    var content = fs.readFileSync(path.join(dependenciesPluginPath, 'plugin.xml'), 'utf-8');
-    var doc = new et.ElementTree(et.XML(content));
-    var element = doc.getroot();
-    var dependencys = element.findall('dependency');
+    var repos = [
+        '../cordova-plugin-battery-status',
+        '../cordova-plugin-camera',
+        '../cordova-plugin-console',
+        '../cordova-plugin-contacts',
+        '../cordova-plugin-device',
+        '../cordova-plugin-device-motion',
+        '../cordova-plugin-device-orientation',
+        '../cordova-plugin-dialogs',
+        '../cordova-plugin-file',
+        '../cordova-plugin-file-transfer',
+        '../cordova-plugin-geolocation',
+        '../cordova-plugin-globalization',
+        '../cordova-plugin-inappbrowser',
+        '../cordova-plugin-media',
+        '../cordova-plugin-media-capture',
+        '../cordova-plugin-network-information',
+        '../cordova-plugin-splashscreen',
+        '../cordova-plugin-vibration'
+    ];
 
     console.log("---------------all repos-----------------");
-    for(var i=0; i< dependencys.length;i++)
+    for(var i=0; i< repos.length;i++)
     {
-        e =   dependencys[i];
-        console.log(e.attrib.subdir);
-        repos.push(e.attrib.subdir);
+        console.log(repos[i]);
     }
     console.log("---------------end repos-----------------");
 
@@ -117,7 +129,15 @@ function main() {
     if(fs.existsSync(src))
     {
         shell.cd(src);
-        child_process.exec('git pull', {encoding: 'utf-8'}, finish );
+      //  child_process.exec('git pull', {encoding: 'utf-8'}, finish );
+        var repos = getRepos(dependenciesPluginPath),
+            dest;
+        repos.forEach(function(repo){
+            console.log("------------------------- merge " + repo+"-------------------------------------");
+            dest = path.join(pwd, repo);
+            mergeAllDir(src, dest);
+            console.log('--------------------------- end ' + repo + '----------------------------------');
+        });
     } else  {
         child_process.exec('git clone https://github.com/apache/cordova-mobile-spec.git', {encoding: 'utf-8'}, finish);
     }
