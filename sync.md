@@ -12,6 +12,7 @@ Environment
 Command
 ---------
 
+     npm install
      node sync
 
 Example
