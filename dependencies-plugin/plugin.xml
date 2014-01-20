@@ -21,30 +21,51 @@
 <plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
     id="org.cordova.mobile-spec-dependencies"
     version="1.0.0">
-  <engines>
-    <engine name="cordova" version=">=3.3.0" />
-  </engines>
 
-  <name>Mobile-Spec plugin to quickly pull in all cordova plugins</name>
+  <name>Mobile-Spec plugin to quickly pull in all xface plugins</name>
 
-  <dependency id="org.apache.cordova.battery-status"/>
-  <dependency id="org.apache.cordova.camera"/>
-  <dependency id="org.apache.cordova.console"/>
-  <dependency id="org.apache.cordova.contacts"/>
-  <dependency id="org.apache.cordova.device"/>
-  <dependency id="org.apache.cordova.device-motion"/>
-  <dependency id="org.apache.cordova.device-orientation"/>
-  <dependency id="org.apache.cordova.dialogs"/>
-  <dependency id="org.apache.cordova.file"/>
-  <dependency id="org.apache.cordova.file-transfer"/>
-  <dependency id="org.apache.cordova.geolocation"/>
-  <dependency id="org.apache.cordova.globalization"/>
-  <dependency id="org.apache.cordova.inappbrowser"/>
-  <dependency id="org.apache.cordova.media"/>
-  <dependency id="org.apache.cordova.media-capture"/>
-  <dependency id="org.apache.cordova.network-information"/>
-  <dependency id="org.apache.cordova.splashscreen"/>
-  <dependency id="org.apache.cordova.vibration"/>
-  <dependency id="org.apache.cordova.test.whitelist" url="." subdir="cordova-plugin-whitelist" />
-  <dependency id="org.apache.cordova.test.echo" url="." subdir="cordova-plugin-echo" />
+  <dependency id="org.apache.cordova.battery-status" name="cordova-plugin-battery-status" />
+  <dependency id="org.apache.cordova.camera" name="cordova-plugin-camera" />
+  <dependency id="org.apache.cordova.console" name="cordova-plugin-console" />
+  <dependency id="org.apache.cordova.contacts" name="cordova-plugin-contacts" />
+  <dependency id="org.apache.cordova.device" name="cordova-plugin-device" />
+  <dependency id="org.apache.cordova.device-motion" name="cordova-plugin-device-motion" />
+  <dependency id="org.apache.cordova.device-orientation" name="cordova-plugin-device-orientation" />
+  <dependency id="org.apache.cordova.dialogs" name="cordova-plugin-dialogs" />
+  <dependency id="org.apache.cordova.file" name="cordova-plugin-file" />
+  <dependency id="org.apache.cordova.file-transfer" name="cordova-plugin-file-transfer" />
+  <dependency id="org.apache.cordova.geolocation" name="cordova-plugin-geolocation"/>
+  <dependency id="org.apache.cordova.globalization" name="cordova-plugin-globalization" />
+  <dependency id="org.apache.cordova.inappbrowser" name="cordova-plugin-inappbrowser" />
+  <dependency id="org.apache.cordova.media" name="cordova-plugin-media" />
+  <dependency id="org.apache.cordova.media-capture" name="cordova-plugin-media-capture" />
+  <dependency id="org.apache.cordova.network-information" name="cordova-plugin-network-information" />
+  <dependency id="org.apache.cordova.splashscreen" name="cordova-plugin-splashscreen" />
+  <dependency id="org.apache.cordova.vibration" name="cordova-plugin-vibration" />
+
+  <dependency id="org.apache.cordova.test.whitelist" url="../cordova-plugin-whitelist" />
+  <dependency id="org.apache.cordova.test.echo" url="../cordova-plugin-echo" />
+
+  <dependency id="org.apache.cordova.statusbar" url="../cordova-plugin-statusbar" />
+  <dependency id="org.apache.cordova.keyboard" url="../cordova-plugin-keyboard" />
+
+  <dependency id="com.polyvi.xface.extension.advancedfiletransfer" name="xface-extension-advanced-file-transfer" />
+  <dependency id="com.polyvi.xface.extension.ams" name="xface-extension-ams" />
+  <dependency id="com.polyvi.xface.extension.bluetooth" name="xface-extension-bluetooth" />
+  <dependency id="com.polyvi.xface.extension.calendar" name="xface-extension-calendar" />
+  <dependency id="com.polyvi.xface.extension.device-capability" name="xface-extension-device-capability" />
+  <dependency id="com.polyvi.xface.extension.messaging" name="xface-extension-messaging" />
+  <dependency id="com.polyvi.xface.extension.push" name="xface-extension-push" />
+  <dependency id="com.polyvi.xface.extension.security" name="xface-extension-security" />
+  <dependency id="com.polyvi.xface.extension.setting" name="xface-extension-setting" />
+  <dependency id="com.polyvi.xface.extension.telephony" name="xface-extension-telephony" />
+  <dependency id="com.polyvi.xface.extension.trafficstats" name="xface-extension-trafficstats" />
+  <dependency id="com.polyvi.xface.extension.umeng" name="xface-extension-umeng" />
+  <dependency id="com.polyvi.xface.extension.uppay" name="xface-extension-uppay" />
+  <dependency id="com.polyvi.xface.extension.xapp" name="xface-extension-xapp" />
+  <dependency id="com.polyvi.xface.extension.xmlhttprequest" name="xface-extension-xml-http-request" />
+  <dependency id="com.polyvi.xface.extension.zbar" name="xface-extension-zbar" />
+  <dependency id="com.polyvi.xface.extension.zip" name="xface-extension-zip" />
+
+  <dependency id="com.polyvi.xface.extra.native-app" name="xface-extra-native-app" />
 </plugin>
