@@ -66,4 +66,6 @@
   <dependency id="com.polyvi.xface.extension.xmlhttprequest" name="xface-extension-xml-http-request" />
   <dependency id="com.polyvi.xface.extension.zbar" name="xface-extension-zbar" />
   <dependency id="com.polyvi.xface.extension.zip" name="xface-extension-zip" />
+
+  <dependency id="com.polyvi.xface.extra.native-app" name="xface-extra-native-app" />
 </plugin>
