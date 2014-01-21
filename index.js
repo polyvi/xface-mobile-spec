@@ -116,8 +116,10 @@ function generateSpecInstaller(projPath, dependenciesPluginPath, platforms, buil
             packagePath = path.join(projPath, 'PluginTestCases.apk');
         } else if (p == 'ios') {
             packagePath = path.join(projPath, 'PluginTestCases.ipa');
+        } else if (p == 'wp8'){
+            packagePath = path.join(projPath, 'PluginTestCases.xap');
         } else {
-            return;
+            throw new Error('Don\'t support platform "' + p + '" now.');
         }
         configFiles.push(config);
         packages.push(packagePath);
