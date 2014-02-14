@@ -20,11 +20,11 @@ function spawn(cmd, callback) {
         command = cmd[0],
         opt = [];
     (cmd.length > 1) && (opt = cmd[1]);
-    if (os.platform() === 'win32') {
+    if (os.platform().slice(0, 3) === 'win') {
         opt = ['/c', command].concat(opt);
         command = 'cmd';
     }
-    console.log('Executing command "' + [cmd[0]].concat(opt).join(' ') + '"...');
+    console.log('Executing command "' + [command].concat(opt).join(' ') + '"...');
     var child = child_process.spawn(command, opt);
     child.stdout.setEncoding('utf8');
     child.stdout.on('data', function(data) {
@@ -69,13 +69,19 @@ function exec(cmds, callback) {
 /**
  * 导出mobile-spec
  */
-function exportSpecTest(projPath, dependenciesPluginPath) {
+function exportSpecTest(opts) {
+    projPath = opts.projectPath;
+    dependenciesPluginPath = opts.dependenciesPluginPath;
+
     var cmds = [
-            ['xmen', ['create', '.']],
-            ['xmen', ['plugin', 'add', dependenciesPluginPath]]
+            ['xmen', ['create', '.']]
         ],
         matchData,
         re = /<dependency.*name\s*=\s*"(.*?)".*?\/>|<dependency.*url\s*=\s*"(.*?)".*?\/>/gm;
+
+    opts.reposet && cmds.push(['xmen', ['set', 'reposet', opts.reposet]]);
+    cmds.push(['xmen', ['plugin', 'add', dependenciesPluginPath]]);
+
     var content = fs.readFileSync(path.join(dependenciesPluginPath, 'plugin.xml'), 'utf-8');
     while((matchData = re.exec(content))) {
         var name = matchData[1],
@@ -99,13 +105,20 @@ function exportSpecTest(projPath, dependenciesPluginPath) {
 /**
  * 生成平台安装包
  */
-function generateSpecInstaller(projPath, dependenciesPluginPath, platforms, built) {
+function generateSpecInstaller(opts) {
+    projPath = opts.projectPath;
+    built = opts.built;
+    platforms = opts.platforms;
+
     var cmds = [
-        ['xmen', ['create', '.', 'com.polyvi.test', 'HelloTest']],
-        ['xmen', ['platform', 'add'].concat(platforms)],
-        ['xmen', ['plugin', 'add', dependenciesPluginPath]],
-        ['xmen', ['app', 'add', 'test']]
+        ['xmen', ['create', '.', 'com.polyvi.test', 'HelloTest']]
     ];
+    opts.reposet && cmds.push(['xmen', ['set', 'reposet', opts.reposet]]);
+    cmds = cmds.concat([
+        ['xmen', ['platform', 'add'].concat(platforms)],
+        ['xmen', ['plugin', 'add', opts.dependenciesPluginPath]],
+        ['xmen', ['app', 'add', 'test']]
+    ]);
     var packages = [],
         configFiles = [];
     built && platforms.forEach(function(p) {
@@ -144,10 +157,15 @@ function main() {
     var args = process.argv,
         platforms,
         built = false,
-        index;
+        index,
+        reposet;
     if((index = args.indexOf('--build')) != -1) {
         built = true;
         args.splice(index, 1);
+    }
+    if((index = args.indexOf('--reposet')) != -1) {
+        reposet = args[index + 1];
+        args.splice(index, 2);
     }
     if(args.length > 2) {
         platforms = args.slice(2);
@@ -163,10 +181,19 @@ function main() {
         return;
     }
 
+    var opts = {
+        projectPath : projPath,
+        dependenciesPluginPath : dependenciesPluginPath
+    };
+    if(reposet) {
+        opts.reposet = reposet;
+    }
     if(platforms) {
-        generateSpecInstaller(projPath, dependenciesPluginPath, platforms, built);
+        opts.platforms = platforms;
+        opts.built = built;
+        generateSpecInstaller(opts);
     } else {
-        exportSpecTest(projPath, dependenciesPluginPath);
+        exportSpecTest(opts);
     }
 }
 

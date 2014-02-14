@@ -13,9 +13,9 @@ Environment
 Command
 ---------
 
-     node index [<platform>... [--build]]
+     node index [<platform>... [--build] [--reposet <path>]]
 &lt;platform&gt;参数为打包平台名称，指定该参数，则会新建平台工程，该参数可选，且可以同时输入多个，目前支持的平台有android、ios、wp8。
---build选项用于标识是否需要生成平台安装包，该参数仅在指定了&lt;platform&gt;的情况下有效。
+--build选项用于标识是否需要生成平台安装包，该参数仅在指定了&lt;platform&gt;的情况下有效；--reposet选项用于修改cli所使用的reposet路径。
 
 如果用户没有提供&lt;platform&gt;参数，则该命令只导出所有插件spectest的zip包；如果提供了&lt;platform&gt;参数，则生成对应平台的spectest安装包，
 安装包格式与具体平台相关。
