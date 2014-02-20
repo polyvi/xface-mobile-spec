@@ -57,7 +57,6 @@
   <dependency id="com.polyvi.xface.extension.messaging" name="xface-extension-messaging" />
   <dependency id="com.polyvi.xface.extension.push" name="xface-extension-push" />
   <dependency id="com.polyvi.xface.extension.security" name="xface-extension-security" />
-  <dependency id="com.polyvi.xface.extension.setting" name="xface-extension-setting" />
   <dependency id="com.polyvi.xface.extension.telephony" name="xface-extension-telephony" />
   <dependency id="com.polyvi.xface.extension.trafficstats" name="xface-extension-trafficstats" />
   <dependency id="com.polyvi.xface.extension.umeng" name="xface-extension-umeng" />
