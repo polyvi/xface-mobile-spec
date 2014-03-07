@@ -1,4 +1,4 @@
-﻿ReadMe
+ReadMe
 =========
 
 该工具主要是配合xmen-cli和xsrc，用于生成所有插件的MobileSpec测试集，在提供了平台参数的情况下，可以生成对应平台测试集的应用安装包。
@@ -31,3 +31,10 @@ Example
     node index android
     or
     node index android --build
+    
+测试说明
+---------
+Mobile Spec Test中以下测试项在player中可以不测，但必须保证非player测试通过
+
+* autotest->benchmark
+* autotest->whitelist
