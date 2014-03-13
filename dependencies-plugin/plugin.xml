@@ -55,7 +55,6 @@
   <dependency id="com.polyvi.xface.extension.device-capability" name="xface-extension-device-capability" />
   <dependency id="com.polyvi.xface.extension.messaging" name="xface-extension-messaging" />
   <dependency id="com.polyvi.xface.extension.push" name="xface-extension-push" />
-  <dependency id="com.polyvi.xface.extension.security" name="xface-extension-security" />
   <dependency id="com.polyvi.xface.extension.telephony" name="xface-extension-telephony" />
   <dependency id="com.polyvi.xface.extension.trafficstats" name="xface-extension-trafficstats" />
   <dependency id="com.polyvi.xface.extension.umeng" name="xface-extension-umeng" />
@@ -65,5 +64,8 @@
   <dependency id="com.polyvi.xface.extension.zbar" name="xface-extension-zbar" />
   <dependency id="com.polyvi.xface.extension.zip" name="xface-extension-zip" />
 
+  <dependency id="com.polyvi.xface.extension.security" name="xface-extension-security" />
+  <dependency id="com.polyvi.xface.extension.upp-security" name="xface-extension-upp-security" />
+  
   <dependency id="com.polyvi.xface.extra.native-app" name="xface-extra-native-app" />
 </plugin>
