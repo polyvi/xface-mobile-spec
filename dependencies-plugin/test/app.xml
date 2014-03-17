@@ -13,6 +13,8 @@
   <access origin="http://techslides.com" />
   <access origin="httpssss://example.com" />
 
+  <access origin="http://222.66.233.198:8080/sim/gettn" />
+
   <preference name="type" readonly="true" value="xapp" />
   <preference name="mode" readonly="true" value="local" />
 
