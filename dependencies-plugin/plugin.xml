@@ -43,7 +43,7 @@
   <dependency id="org.apache.cordova.splashscreen" name="cordova-plugin-splashscreen" />
   <dependency id="org.apache.cordova.vibration" name="cordova-plugin-vibration" />
   <dependency id="org.apache.cordova.statusbar" name="cordova-plugin-statusbar" />
-  <dependency id="org.apache.cordova.keyboard" name="cordova-plugin-keyboard" />
+  <dependency id="org.apache.cordova.labs.keyboard" name="cordova-plugin-keyboard" />
 
   <dependency id="org.apache.cordova.test.whitelist" url="../cordova-plugin-whitelist" />
   <dependency id="org.apache.cordova.test.echo" url="../cordova-plugin-echo" />
