@@ -61,7 +61,25 @@
         el.innerHTML = el.innerHTML + s + "<br>";
     };
 
-    
+    function interceptMessagereceived(msgs) {
+        eventOutput("received msg length : " + msgs.length);
+    }
+
+    function interceptCallreceived(CallStatus) {
+        var callStatus = parseInt(CallStatus);
+        switch(callStatus){
+        case 0:
+            eventOutput("无状态(挂断)");
+            break;
+        case 1:
+            eventOutput("电话呼入，响铃中");
+            break;
+        case 2:
+            eventOutput("接听电话。。。。");
+        break;
+        }
+    }
+
     /**
      * Function called when page has finished loading.
      */
@@ -90,6 +108,10 @@
     </div>
     <input type="text" value="Type here to test events when fields are focused" />
     <h2>Action</h2>
+    <div class="btn large" data-platform = "android" onclick="document.addEventListener('callreceived', interceptCallreceived, false);">intercept callreceived</div>
+    <div class="btn large" data-platform = "android" onclick="document.removeEventListener('callreceived', interceptCallreceived, false);">Stop intercept of callreceived</div>
+    <div class="btn large" data-platform = "android" onclick="document.addEventListener('messagereceived', interceptMessagereceived, false);">intercept messagereceived</div>
+    <div class="btn large" data-platform = "android" onclick="document.removeEventListener('messagereceived', interceptMessagereceived, false);">Stop intercept of messagereceived</div>
     <div class="btn large" onclick="document.addEventListener('backbutton', interceptBackbutton, false);">Intercept backbutton</div>
     <div class="btn large" onclick="document.removeEventListener('backbutton', interceptBackbutton, false);">Stop intercept of backbutton</div>
     <div class="btn large" onclick="document.addEventListener('menubutton', interceptMenubutton, false);">Intercept menubutton</div>
