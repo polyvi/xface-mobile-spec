@@ -13,6 +13,12 @@
   <access origin="http://techslides.com" />
   <access origin="httpssss://example.com" />
 
+  <access origin="http://www.google.cn" />
+  <access origin="http://www.google.com.hk" />
+  <access origin="https://www.google.com.hk" />
+  <access origin="http://ssl.gstatic.com" />
+  <access origin="https://ssl.gstatic.com" />
+
   <access origin="http://222.66.233.198:8080/sim/gettn" />
 
   <preference name="type" readonly="true" value="xapp" />
