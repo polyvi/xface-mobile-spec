@@ -53,7 +53,9 @@
         inProgress = val;
         var goBtn = document.getElementById('go-btn');
         goBtn.textContent = inProgress ? 'Stop' : 'Start';
-        cordova.echo.stopBulkEcho();
+        if('android' === cordova.require('cordova/platform').id){
+            cordova.echo.stopBulkEcho();
+        }
     }
 
     function createPayload(size, binary) {
