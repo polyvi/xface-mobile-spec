@@ -1,0 +1,23 @@
+{
+  "name": "xface-mobile-spec",
+  "version": "1.0.0",
+  "description": "ReadMe =========",
+  "main": "index.js",
+  "dependencies": {
+    "shelljs": "~0.1.4",
+    "elementtree": ""
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.polyvi.com:xface-mobile-spec"
+  },
+  "keywords": [
+    "xface-mobile-spec"
+  ],
+  "author": "polyvi",
+  "license": "BSD-2-Clause"
+}
