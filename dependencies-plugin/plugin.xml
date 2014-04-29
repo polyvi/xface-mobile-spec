@@ -19,7 +19,7 @@
 -->
 
 <plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
-    id="org.cordova.mobile-spec-dependencies"
+    id="com.polyvi.extension.mobile-spec-dependencies"
     version="1.0.0">
 
   <name>Mobile-Spec plugin to quickly pull in all xface plugins</name>
