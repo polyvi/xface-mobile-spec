@@ -24,6 +24,9 @@
   <preference name="type" readonly="true" value="xapp" />
   <preference name="mode" readonly="true" value="local" />
 
+  <preference name="iosPersistentFileLocation" value="Library" />
+  <preference name="AndroidPersistentFileLocation" value="Internal" />
+
   <description>
       xFace test suite.
   </description>
