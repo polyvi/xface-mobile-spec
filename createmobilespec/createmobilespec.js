@@ -111,11 +111,14 @@ try {
 // Setting up config.fatal as true, if something goes wrong the program it will terminate
 shelljs.config.fatal = true;
 // Creating the project, linked to cordova-mobile-spec library
-shelljs.exec(cordova_cli + " create mobilespec org.apache.cordova.mobilespec MobileSpec_Tests --link-to " + cordova_ms);
+shelljs.exec(cordova_cli + " create mobilespec org.apache.cordova.mobilespec MobileSpec_Tests --link-to cordova-mobile-spec");
 
 // Executing grunt task, to generate updated js files for each platform
 shelljs.pushd(cordova_js);
-shelljs.exec("grunt");
+var code = shelljs.exec("grunt").code;
+if (code) {
+    process.exit(1);
+}
 shelljs.popd();
 
 // Config.json file ---> linked to local libraries
